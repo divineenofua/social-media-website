@@ -103,19 +103,19 @@ nav .container{
     font-weight: 800;
     
 }
-nav .search-bar{
+.search-bar{
     background-color: var(--light-color);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
 }
-nav .search-bar input[type="search"]{
+ .search-bar input[type="search"]{
     background-color: transparent;
     width:30vw;
     margin-left: 16px;
     font-size:12px;
     color: var(--dark-color);
 }
-nav .search-bar input[type="search"]::placeholder{
+.search-bar input[type="search"]::placeholder{
     color: var(--gray-color);
 }
 
@@ -263,20 +263,160 @@ main .container .left .profile{
     font-size:12px ;
     width: 100%;
     position: relative;
-    background: blue;
     overflow: hidden;
+}
+.middle .stories .story::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    bottom: 0;
+}
+.middle .stories .story .profile-photo{
+    width: 32px;
+    height: 32px;
+    align-self: start;
+    border: 3px solid var(--primary-color);
+}
+.middle .stories .story .name{
+    z-index: 2;
+}
+.middle .stories .story:nth-child(1) {
+    background: url(assets/allef-vinicius-XRLjA9Qq65Y-unsplash.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(2) {
+    background: url(assets/breakf\ special\ \(5\).jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(3) {
+    background: url(assets/feed-1.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(4) {
+    background: url(assets/feed-2.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(5) {
+    background: url(assets/js\ ex\ 2.jpeg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(6) {
+    background: url(assets/aaron-huber-21uVbzB2ex8-unsplash.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(7) {
+    background: url(assets/egor-litvinov-GD1ZOu5NBnw-unsplash.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(8) {
+    background: url(assets/graduation2.jpg)no-repeat center center/cover ;
+}
+.middle .stories .story:nth-child(9) {
+    background: url(assets/rochelle-nicole-E9uJ65vwGmE-unsplash.jpg)no-repeat center center/cover ;
+}
+/* -----------------CREATE POST---------------------- */
+.middle .create-post{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 16px;
+     align-items: center;
+     background-color: var(--white);
+     padding: 6.4px var(--card-padding);
+     border-radius: var(--border-radius);
+}
+.middle .create-post input[type="text"] {
+    justify-self: start;
+    width: 100%;
+    padding-left: 16px;
+    background: transparent;
+    color: var(--dark-color);
+    margin-right: 16px;
+}
+/* ===============FEEDS ============================== */
+.middle .feeds .feed{
+    background: var(--white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 16px 0;
+    font-size: 13.6px;
+    line-height: 1.4;
+}
+.middle .feeds .feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+.middle .feeds .feed .user{
+    display: flex;  
+    gap: 16px;
+}
+.middle .feed .photo{
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin:11.2px 0;
+    object-fit: cover;
+}
+.middle .feed .action-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22.4px;
+    margin: 9.6px;
+}
+.middle .liked-by{
+    display: flex;
+}
+.middle .liked-by span{
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--white);
+    object-fit: contain;
+    margin-left: -9.6px;
+}
+.middle .liked-by span:first-child{
+    margin: 0;
+}
+.middle .liked-by p{
+    margin-left: 8px ;
 }
 
 
+/* ------------------RIGHT------------------------------- */
+main .container .right{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+.right .messages{
+    background: var(--white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+}
+.right .messages .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.right .messages i{
+    font-size: 22.4px;
+}
 
+.right .messages .search-bar{
+    display: flex;
+    margin-bottom: 16px;
+}
 
-
-
-
-
-
-
-
+.right .messages .category{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.right .messages .category h4{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--light-color) ;
+    padding-bottom: 8px;
+    font-size: 13.6px;
+}
 
 
 
