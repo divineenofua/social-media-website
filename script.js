@@ -19,7 +19,10 @@ const Bg1 = document.querySelector('.bg-1');
 const Bg2 = document.querySelector('.bg-2');
 const Bg3 = document.querySelector('.bg-3');
 
-const backGround = document.querySelectorAll('.choose-bg div')
+const backGround = document.querySelectorAll('.choose-bg div'); 
+
+
+
 
 // ================ SIDE BAR=======================
 // REMOVE ACTIVE CLASS FROM ALL MENU ITEMS
@@ -118,21 +121,21 @@ fontSizes.forEach(size => {
         root.style.setProperty('--sticky-top-left', '86.4px'); 
         root.style.setProperty('--sticky-top-right', '86.4px'); 
     } else if(size.classList.contains('font-size-2')){
-        fontSize = '13px';
+        fontSize = '12px';
         root.style.setProperty('--sticky-top-left', '86.4px'); 
         root.style.setProperty('--sticky-top-right', '-112px');
     } else if(size.classList.contains('font-size-3')){
-        fontSize = '16px';
-        root.style.setProperty('--sticky-top-left', '-32px'); 
-        root.style.setProperty('--sticky-top-right', '-272px');
+        fontSize = '13.7px';
+        root.style.setProperty('--sticky-top-left', '40px'); 
+        root.style.setProperty('--sticky-top-right', '-150px');
    } else if(size.classList.contains('font-size-4')){
-        fontSize = '19px';
+        fontSize = '15px';
         root.style.setProperty('--sticky-top-left', '-8px'); 
         root.style.setProperty('--sticky-top-right', '-400px');
    } else if(size.classList.contains('font-size-5')){
-        fontSize = '21px';
-        root.style.setProperty('--sticky-top-left', '-192px'); 
-        root.style.setProperty('--sticky-top-right', '-360px');
+        fontSize = '17px';
+        root.style.setProperty('--sticky-top-left', '0px'); 
+        root.style.setProperty('--sticky-top-right', '0px');
   }
 
   const allElementsInDom= document.querySelectorAll("html *")
@@ -143,6 +146,7 @@ fontSizes.forEach(size => {
 })
 
 })
+
 
 // remove active class
 const changeActiveColorClass = () => {
@@ -177,54 +181,116 @@ colorPalette.forEach(color => {
 })
 
 
-// theme BACKGROUND values
-let lightColorLightness;
-let whiteColorLightness;
-let darkColorLightness;
 
-// change background colors
- const changeBG = () => {
-    root.style.setProperty('--light-color-lightness', lightColorLightness);
-    root.style.setProperty('--white-color-lightness', whiteColorLightness);
-    root.style.setProperty('--dark-color-lightness', darkColorLightness);
- }
+
+
+
+
+const removeBackGroundSelector = () => {
+    backGround.forEach(back => {   
+        back.classList.remove('active');
+    })
+} 
+
+
+
+backGround.forEach(back => {
+    back.addEventListener('click', () => { 
+      removeBackGroundSelector();
+      let backGroundMode;
+      back.classList.toggle('active');
+
+        if(back.classList.contains('bg-1')){
+        window.location.reload();
+      } else if(back.classList.contains('bg-2')){
+        root.style.setProperty('--dark-text', 'white');
+        root.style.setProperty('--light-color-lightness', '25%');
+        root.style.setProperty('--white-color-lightness', '20%');
+        root.style.setProperty('--dark-color-lightness', '15%');
+        style.color = 'white';
+      } else if(back.classList.contains('bg-3')){
+        root.style.setProperty('--dark-text', 'white');
+        root.style.setProperty('--light-color-lightness', '15%');
+        root.style.setProperty('--white-color-lightness', '10%');
+        root.style.setProperty('--dark-color-lightness', '0%');
+     } 
+  
+    const allElementsInDom= document.querySelectorAll("html *")
+  
+    allElementsInDom.forEach(element  => {
+        element.style.backGround = backGroundMode
+    })
+
+  })
+  
+  })
+
+
+
+
+
+
+
+//   ALTERNATE METHOD FOR CHANGING BACKGROUND COLOR
+
+
+// // theme BACKGROUND values
+// let lightColorLightness;
+// let whiteColorLightness;
+// let darkColorLightness;
+
+// // change background colors
+//  const changeBG = () => {
+//     root.style.setProperty('--light-color-lightness', lightColorLightness);
+//     root.style.setProperty('--white-color-lightness', whiteColorLightness);
+//     root.style.setProperty('--dark-color-lightness', darkColorLightness);
  
 
-// change background colors
-Bg1.addEventListener('click', () => {
-// add active class
-Bg1.classList.add('active');
-// remove active class from others 
-Bg2.classList.remove('active');
-Bg3.classList.remove('active');
-// remove customized changes from local storage
-window.location.reload();
-})
+// }
+ 
+
+// // change background colors
+// Bg1.addEventListener('click', () => {
+
+//     lightColorLightness = '95%';
+//     whiteColorLightness = '20%';
+//     darkColorLightness = '15%';
+
+// // add active class
+    
+
+//     Bg1.classList.add('active');
+//     // remove active class from others 
+//     Bg2.classList.remove('active');
+//     Bg3.classList.remove('active');
+// // remove customized changes from local storage
+//     window.location.reload();
+// });
 
 
-Bg2.addEventListener('click', () => {
-    lightColorLightness = '95%';
-    whiteColorLightness = '20%';
-    darkColorLightness = '15%';
+// Bg2.addEventListener('click', () => {
+//     lightColorLightness = '10%';
+//     whiteColorLightness = '20%';
+//     darkColorLightness = '15%';
+//     // add active class
+//     Bg2.classList.add('active');
+//     // remove active classes from the others
+//     Bg1.classList.remove('active');
+//     Bg3.classList.remove('active');
+//     changeBG();
+// });
 
-    // add active class
-    Bg2.classList.add('active');
-    // remove active classes from the others
-    Bg1.classList.remove('active');
-    Bg3.classList.remove('active');
-    changeBG();
-});
 
+// Bg3.addEventListener('click', () => {
+//     lightColorLightness = '15%';
+//     whiteColorLightness = '10%';
+//     darkColorLightness = '0%';
 
-Bg3.addEventListener('click', () => {
-    lightColorLightness = '95%';
-    whiteColorLightness = '10%';
-    darkColorLightness = '0%';
+//     // // add active class
+//     // Bg3.classList.add('active');
+//     //  remove active classes from the others
+//     Bg1.classList.remove('active');
+//     Bg2.classList.remove('active');
+//     changeBG();
+// });
 
-    // add active class
-    Bg3.classList.add('active');
-    // remove active classes from the others
-    Bg1.classList.remove('active');
-    Bg2.classList.remove('active');
-    changeBG();
-});

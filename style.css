@@ -2,7 +2,6 @@
 :root {
     --roboto: "Roboto" sans-serif;
     --poppins: "Poppins" sans-serif;
-    --pinkshade: rgb(211, 85, 106);
     --white: hsl(252, 30%, var(--white-color-lightness));
     --black: black;
     --primary-color-hue: 252;
@@ -17,7 +16,7 @@
     --danger-color:hsl(0, 95%, 65%);
     --dark-color:hsl(252, 30%, var(--dark-color-lightness));
     --box-shadow:  0 2px 10px rgba(0, 0, 0, 0.3);
-
+    --dark-text: rgb(34, 31, 31);
     --border-radius:32px;
     --card-border-radius:16px;
     --btn-padding:9px 32px;
@@ -40,7 +39,7 @@
 body {
     overflow-x: hidden;
     font-family: var(--poppins);
-    color: var(--dark-color);
+    color: var(--dark-text);
     background-color: var(--light-color);
 }
 img {
@@ -79,7 +78,7 @@ h4, .name{
 }
 .btn-primary{
     background-color: var(--primary-color);
-    color: var(--white);
+    color: white;
 }
 .text-bold{
     font-weight: 500;
@@ -105,7 +104,9 @@ nav .container{
 .logo{
     font-size: 23px;
     font-weight: 800;
-    
+}
+.logo i{
+    color: var(--primary-color);
 }
 .search-bar{
     background-color: var(--light-color);
@@ -234,7 +235,7 @@ main .container .left .profile{
     background-color: var(--white);
     padding: var(--card-padding);
     box-shadow: 0 0 16px hsl(var(--primary-color), 75%, 60%, 25%);
-    z-index: 8;
+    z-index: 10;
 }
 .left .notifications-popup::before{
     content: "";
@@ -275,6 +276,7 @@ main .container .left .profile{
     width: 100%;
     position: relative;
     overflow: hidden;
+    
 }
 .middle .stories .story::before{
     content: "";
@@ -295,6 +297,7 @@ main .container .left .profile{
     z-index: 2;
 }
 .middle .stories .story:nth-child(1) {
+
     background: url(assets/allef-vinicius-XRLjA9Qq65Y-unsplash.jpg)no-repeat center center/cover ;
 }
 .middle .stories .story:nth-child(2) {
@@ -608,7 +611,7 @@ main .container .right{
 }
 .customize-theme .choose-bg .bg-3  {
     background-color: hsl(252, 30%, 10%);
-    color: var(--white);
+    color: white;
 }
 .customize-theme .choose-bg > div span{
     width: 16px;
