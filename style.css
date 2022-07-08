@@ -36,6 +36,10 @@
     border: none; outline: none;
     list-style: none;
 }
+a{
+    text-decoration: none;
+    color: var(--dark-text);
+}
 body {
     overflow-x: hidden;
     font-family: var(--poppins);
@@ -104,6 +108,7 @@ nav .container{
 .logo{
     font-size: 23px;
     font-weight: 800;
+    cursor: pointer;
 }
 .logo i{
     color: var(--primary-color);
@@ -173,6 +178,7 @@ main .container .left .profile{
 .left .sidebar .menu-item:hover{
     background: var(--light-color);
 }
+
 .left .sidebar i{
     font-size: 18.4px;
     color:var(--gray-color);
@@ -210,13 +216,26 @@ main .container .left .profile{
     position: absolute;
     background-color: var(--primary-color);
 }
+.left .sidebar .active::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 8px;
+    background-color: var(--primary-color);
+    height: 100%;
+    right: 0;
+    
+}
 .left .sidebar .menu-item:first-child.active{
     border-top-left-radius: var(--card-border-radius);
     overflow: hidden;
+    border-top-right-radius: var(--card-border-radius);
 }
 .left .sidebar .menu-item:last-child.active{
     border-bottom-left-radius: var(--card-border-radius);
     overflow: hidden;
+    border-bottom-right-radius: var(--card-border-radius);
+
 }
 .left .btn{
     margin-top: 16px;
@@ -271,7 +290,7 @@ main .container .left .profile{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: var(--white);
+    color: white;
     font-size:12px ;
     width: 100%;
     position: relative;
@@ -297,7 +316,6 @@ main .container .left .profile{
     z-index: 2;
 }
 .middle .stories .story:nth-child(1) {
-
     background: url(assets/allef-vinicius-XRLjA9Qq65Y-unsplash.jpg)no-repeat center center/cover ;
 }
 .middle .stories .story:nth-child(2) {
@@ -405,6 +423,7 @@ main .container .right{
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
 }
+
 .right .messages .heading{
     display: flex;
     align-items: center;
@@ -543,7 +562,7 @@ main .container .right{
 .customize-theme  .choose-size span.active{
     background: var(--primary-color);
 }
-/* FONT SIZE */ 
+/* COLOR */ 
 .customize-theme .color{
     margin-top: 32px;
 }
@@ -623,6 +642,7 @@ main .container .right{
 .customize-theme .card{
     width: 92vw;
 }
+/* messages */
 
 /* ========================MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS================================== */
 @media  (max-width: 1200px) {
@@ -665,7 +685,10 @@ main .container .right{
         bottom: 0;
         right: 0;
     }
-   
+    .container .right .messages{
+        width: 100%;
+        display: block;
+    }
    
     /* ==============NOTIFICATION POPUP==================== */
     .left .notifications-popup{

@@ -6,8 +6,9 @@ const messageNotification = document.querySelector('#messages-notifications');
 const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message');
 const messageSearch = document.querySelector('#message-search'); 
- 
-
+//  Explore
+const exploreItem = document.querySelector('#explore');
+const searchBar = document.querySelector('.search-bar');
 //  THEME
 const theme = document.querySelector('#theme');
 const themeModal = document.querySelector('.customize-theme');
@@ -77,6 +78,20 @@ messageNotification.addEventListener('click', () => {
     }, 2000);
 });
 
+
+
+// EXPLORE MENU-ITEM
+exploreItem.addEventListener('click', () => {
+    searchBar.style.boxShadow = '0 0 16px var(--primary-color)';
+    setTimeout(() => {
+        searchBar.style.boxShadow = 'none';
+    }, 2000);
+    // altermate method below which defines the variable "search- bar" directly
+    // document.querySelector('.search-bar').style.boxShadow = '0 0 16px var(--primary-color)';
+    // setTimeout(() => {
+    //     document.querySelector('.search-bar').style.boxShadow = 'none';
+    // }, 2000);
+});
 
 //  THEME/DISPLAY CUSTOMIZATION
 
