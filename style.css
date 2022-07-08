@@ -712,3 +712,9 @@ main .container .right{
         display: none;
     }
 }
+
+@media (max-width: 490px) {
+    .customize-theme .card{
+        width: 80%;
+    }
+}
